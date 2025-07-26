@@ -2,22 +2,22 @@ package com.example.demo.service;
 
 import org.springframework.stereotype.Service;
 import java.util.List;
-import com.example.demo.repository.groupRepository;
-import com.example.demo.entity.group;
+import com.example.demo.repository.GroupRepository;
+import com.example.demo.entity.Group;
 
 @Service
-public class groupService {
-    private final groupRepository repository;
+public class GroupService {
+    private final GroupRepository repository;
 
-    public groupService(groupRepository repository) {
+    public GroupService(GroupRepository repository) {
         this.repository = repository;
     }
 
-    public List<group> findAll() {
+    public List<Group> findAll() {
         return repository.findAll();
     }
 
-    public group save(group item) {
+    public Group save(Group item) {
         return repository.save(item);
     }
 

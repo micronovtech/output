@@ -2,31 +2,31 @@ package com.example.demo.controller;
 
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-import com.example.demo.service.groupService;
-import com.example.demo.entity.group;
+import com.example.demo.service.GroupService;
+import com.example.demo.entity.Group;
 
 @RestController
 @RequestMapping("/api/groups")
-public class groupController {
+public class GroupController {
 
-    private final groupService service;
+    private final GroupService service;
 
-    public groupController(groupService service) {
+    public GroupController(GroupService service) {
         this.service = service;
     }
 
     @GetMapping
-    public List<group> getAll() {
+    public List<Group> getAll() {
         return service.findAll();
     }
 
     @PostMapping
-    public group create(@RequestBody group item) {
+    public Group create(@RequestBody Group item) {
         return service.save(item);
     }
 
     @PutMapping("/{id}")
-    public group update(@PathVariable Long id, @RequestBody group item) {
+    public Group update(@PathVariable Long id, @RequestBody Group item) {
         item.setId(id);
         return service.save(item);
     }
