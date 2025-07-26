@@ -24,4 +24,9 @@ public class UserService {
     public void deleteById(Long id) {
         repository.deleteById(id);
     }
+
+    public long count() {
+        return repository.count();
+    }
+
 }

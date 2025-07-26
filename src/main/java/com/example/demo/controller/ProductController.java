@@ -35,4 +35,9 @@ public class ProductController {
     public void delete(@PathVariable Long id) {
         service.deleteById(id);
     }
+
+    @GetMapping("/count")
+    public long count() {
+        return service.count();
+    }
 }
