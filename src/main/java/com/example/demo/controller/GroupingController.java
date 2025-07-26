@@ -6,7 +6,7 @@ import com.example.demo.service.GroupingService;
 import com.example.demo.entity.Grouping;
 
 @RestController
-@RequestMapping("/api/Groupings")
+@RequestMapping("/api/groupings")
 public class GroupingController {
 
     private final GroupingService service;
