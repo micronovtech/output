@@ -7,7 +7,7 @@ import java.util.*;
 @Entity
 @Getter
 @Setter
-@Table(name = "accountss")
+@Table(name = "accounts")
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder

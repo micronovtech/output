@@ -6,7 +6,7 @@ import com.example.demo.service.TransactionsService;
 import com.example.demo.entity.Transactions;
 
 @RestController
-@RequestMapping("/api/transactionss")
+@RequestMapping("/api/transactions")
 public class TransactionsController {
 
     private final TransactionsService service;
