@@ -7,19 +7,21 @@ import java.util.*;
 @Entity
 @Getter
 @Setter
-@Table(name = "\"user\"")
+@Table(name = "journalss")
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class User {
+public class Journals {
 
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 private Long id;
 
-    private String username;
-    private String email;
-    private Boolean isActive;
+    private String reference_no;
+    private String description;
+    private String date;
+    private String created_at;
+    private String updated_at;
 
 
 

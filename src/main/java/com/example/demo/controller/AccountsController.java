@@ -2,31 +2,31 @@ package com.example.demo.controller;
 
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-import com.example.demo.service.GroupingService;
-import com.example.demo.entity.Grouping;
+import com.example.demo.service.AccountsService;
+import com.example.demo.entity.Accounts;
 
 @RestController
-@RequestMapping("/api/groupings")
-public class GroupingController {
+@RequestMapping("/api/accountss")
+public class AccountsController {
 
-    private final GroupingService service;
+    private final AccountsService service;
 
-    public GroupingController(GroupingService service) {
+    public AccountsController(AccountsService service) {
         this.service = service;
     }
 
     @GetMapping
-    public List<Grouping> getAll() {
+    public List<Accounts> getAll() {
         return service.findAll();
     }
 
     @PostMapping
-    public Grouping create(@RequestBody Grouping item) {
+    public Accounts create(@RequestBody Accounts item) {
         return service.save(item);
     }
 
     @PutMapping("/{id}")
-    public Grouping update(@PathVariable Long id, @RequestBody Grouping item) {
+    public Accounts update(@PathVariable Long id, @RequestBody Accounts item) {
         item.setId(id);
         return service.save(item);
     }
