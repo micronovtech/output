@@ -1,32 +1,32 @@
-package com.example.demo.controller;
+package com.pieCrud.be.controller;
 
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-import com.example.demo.service.UserService;
-import com.example.demo.entity.User;
+import com.pieCrud.be.service.CustomerService;
+import com.pieCrud.be.entity.Customer;
 
 @RestController
-@RequestMapping("/api/users")
-public class UserController {
+@RequestMapping("/api/customer")
+public class CustomerController {
 
-    private final UserService service;
+    private final CustomerService service;
 
-    public UserController(UserService service) {
+    public CustomerController(CustomerService service) {
         this.service = service;
     }
 
     @GetMapping
-    public List<User> getAll() {
+    public List<Customer> getAll() {
         return service.findAll();
     }
 
     @PostMapping
-    public User create(@RequestBody User item) {
+    public Customer create(@RequestBody Customer item) {
         return service.save(item);
     }
 
     @PutMapping("/{id}")
-    public User update(@PathVariable Long id, @RequestBody User item) {
+    public Customer update(@PathVariable Long id, @RequestBody Customer item) {
         item.setId(id);
         return service.save(item);
     }

@@ -1,23 +1,23 @@
-package com.example.demo.service;
+package com.pieCrud.be.service;
 
 import org.springframework.stereotype.Service;
 import java.util.List;
-import com.example.demo.repository.AccountsRepository;
-import com.example.demo.entity.Accounts;
+import com.pieCrud.be.repository.PenjualanRepository;
+import com.pieCrud.be.entity.Penjualan;
 
 @Service
-public class AccountsService {
-    private final AccountsRepository repository;
+public class PenjualanService {
+    private final PenjualanRepository repository;
 
-    public AccountsService(AccountsRepository repository) {
+    public PenjualanService(PenjualanRepository repository) {
         this.repository = repository;
     }
 
-    public List<Accounts> findAll() {
+    public List<Penjualan> findAll() {
         return repository.findAll();
     }
 
-    public Accounts save(Accounts item) {
+    public Penjualan save(Penjualan item) {
         return repository.save(item);
     }
 

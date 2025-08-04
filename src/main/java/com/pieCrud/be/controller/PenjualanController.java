@@ -1,32 +1,32 @@
-package com.example.demo.controller;
+package com.pieCrud.be.controller;
 
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-import com.example.demo.service.AccountsService;
-import com.example.demo.entity.Accounts;
+import com.pieCrud.be.service.PenjualanService;
+import com.pieCrud.be.entity.Penjualan;
 
 @RestController
-@RequestMapping("/api/accounts")
-public class AccountsController {
+@RequestMapping("/api/penjualan")
+public class PenjualanController {
 
-    private final AccountsService service;
+    private final PenjualanService service;
 
-    public AccountsController(AccountsService service) {
+    public PenjualanController(PenjualanService service) {
         this.service = service;
     }
 
     @GetMapping
-    public List<Accounts> getAll() {
+    public List<Penjualan> getAll() {
         return service.findAll();
     }
 
     @PostMapping
-    public Accounts create(@RequestBody Accounts item) {
+    public Penjualan create(@RequestBody Penjualan item) {
         return service.save(item);
     }
 
     @PutMapping("/{id}")
-    public Accounts update(@PathVariable Long id, @RequestBody Accounts item) {
+    public Penjualan update(@PathVariable Long id, @RequestBody Penjualan item) {
         item.setId(id);
         return service.save(item);
     }

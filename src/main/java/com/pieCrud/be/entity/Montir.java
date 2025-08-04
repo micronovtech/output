@@ -1,4 +1,4 @@
-package com.example.demo.entity;
+package com.pieCrud.be.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -7,19 +7,18 @@ import java.util.*;
 @Entity
 @Getter
 @Setter
-@Table(name = "\"user\"")
+@Table(name = "montir")
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class User {
+public class Montir {
 
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 private Long id;
 
-    private String username;
-    private String email;
-    private Boolean isActive;
+    private String nama;
+    private String pengalaman;
 
 
 

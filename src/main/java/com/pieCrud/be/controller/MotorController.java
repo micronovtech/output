@@ -1,32 +1,32 @@
-package com.example.demo.controller;
+package com.pieCrud.be.controller;
 
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-import com.example.demo.service.JournalsService;
-import com.example.demo.entity.Journals;
+import com.pieCrud.be.service.MotorService;
+import com.pieCrud.be.entity.Motor;
 
 @RestController
-@RequestMapping("/api/journals")
-public class JournalsController {
+@RequestMapping("/api/motor")
+public class MotorController {
 
-    private final JournalsService service;
+    private final MotorService service;
 
-    public JournalsController(JournalsService service) {
+    public MotorController(MotorService service) {
         this.service = service;
     }
 
     @GetMapping
-    public List<Journals> getAll() {
+    public List<Motor> getAll() {
         return service.findAll();
     }
 
     @PostMapping
-    public Journals create(@RequestBody Journals item) {
+    public Motor create(@RequestBody Motor item) {
         return service.save(item);
     }
 
     @PutMapping("/{id}")
-    public Journals update(@PathVariable Long id, @RequestBody Journals item) {
+    public Motor update(@PathVariable Long id, @RequestBody Motor item) {
         item.setId(id);
         return service.save(item);
     }

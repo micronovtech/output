@@ -1,23 +1,23 @@
-package com.example.demo.service;
+package com.pieCrud.be.service;
 
 import org.springframework.stereotype.Service;
 import java.util.List;
-import com.example.demo.repository.UserRepository;
-import com.example.demo.entity.User;
+import com.pieCrud.be.repository.CustomerRepository;
+import com.pieCrud.be.entity.Customer;
 
 @Service
-public class UserService {
-    private final UserRepository repository;
+public class CustomerService {
+    private final CustomerRepository repository;
 
-    public UserService(UserRepository repository) {
+    public CustomerService(CustomerRepository repository) {
         this.repository = repository;
     }
 
-    public List<User> findAll() {
+    public List<Customer> findAll() {
         return repository.findAll();
     }
 
-    public User save(User item) {
+    public Customer save(Customer item) {
         return repository.save(item);
     }
 
