@@ -7,19 +7,20 @@ import java.util.*;
 @Entity
 @Getter
 @Setter
-@Table(name = "customer")
+@Table(name = "products")
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Customer {
+public class Products {
 
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 private Long id;
 
-    private String nama;
-    private String alamat;
-    private String nomor_telepon;
+    private String name;
+    private String price;
+    private String stock;
+    private String Photo;
 
 
 

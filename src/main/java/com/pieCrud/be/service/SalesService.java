@@ -2,22 +2,22 @@ package com.pieCrud.be.service;
 
 import org.springframework.stereotype.Service;
 import java.util.List;
-import com.pieCrud.be.repository.MontirRepository;
-import com.pieCrud.be.entity.Montir;
+import com.pieCrud.be.repository.SalesRepository;
+import com.pieCrud.be.entity.Sales;
 
 @Service
-public class MontirService {
-    private final MontirRepository repository;
+public class SalesService {
+    private final SalesRepository repository;
 
-    public MontirService(MontirRepository repository) {
+    public SalesService(SalesRepository repository) {
         this.repository = repository;
     }
 
-    public List<Montir> findAll() {
+    public List<Sales> findAll() {
         return repository.findAll();
     }
 
-    public Montir save(Montir item) {
+    public Sales save(Sales item) {
         return repository.save(item);
     }
 

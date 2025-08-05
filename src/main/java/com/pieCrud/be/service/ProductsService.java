@@ -2,22 +2,22 @@ package com.pieCrud.be.service;
 
 import org.springframework.stereotype.Service;
 import java.util.List;
-import com.pieCrud.be.repository.PenjualanRepository;
-import com.pieCrud.be.entity.Penjualan;
+import com.pieCrud.be.repository.ProductsRepository;
+import com.pieCrud.be.entity.Products;
 
 @Service
-public class PenjualanService {
-    private final PenjualanRepository repository;
+public class ProductsService {
+    private final ProductsRepository repository;
 
-    public PenjualanService(PenjualanRepository repository) {
+    public ProductsService(ProductsRepository repository) {
         this.repository = repository;
     }
 
-    public List<Penjualan> findAll() {
+    public List<Products> findAll() {
         return repository.findAll();
     }
 
-    public Penjualan save(Penjualan item) {
+    public Products save(Products item) {
         return repository.save(item);
     }
 

@@ -2,22 +2,22 @@ package com.pieCrud.be.service;
 
 import org.springframework.stereotype.Service;
 import java.util.List;
-import com.pieCrud.be.repository.CustomerRepository;
-import com.pieCrud.be.entity.Customer;
+import com.pieCrud.be.repository.CustomersRepository;
+import com.pieCrud.be.entity.Customers;
 
 @Service
-public class CustomerService {
-    private final CustomerRepository repository;
+public class CustomersService {
+    private final CustomersRepository repository;
 
-    public CustomerService(CustomerRepository repository) {
+    public CustomersService(CustomersRepository repository) {
         this.repository = repository;
     }
 
-    public List<Customer> findAll() {
+    public List<Customers> findAll() {
         return repository.findAll();
     }
 
-    public Customer save(Customer item) {
+    public Customers save(Customers item) {
         return repository.save(item);
     }
 
